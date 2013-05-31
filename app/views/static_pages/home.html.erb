@@ -3,60 +3,102 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Journey to the Edge: Grand Canyon</title>
-<link href="css/journey_02.css" rel="stylesheet" type="text/css" />
+<!-- <link href="css/journey_02.css" rel="stylesheet" type="text/css" />  -->
+<style type="text/css">
+
+body {
+  background-color:#372458;
+  color:#52B735;
+  font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+  margin:0;
+}
+#wrapper {
+  margin: 0 10%;
+  background-color:#523478;
+/*
+  background-image:url(../images/sidebar_liquid.jpg);
+  background-position:25% 0;
+  background-repeat:repeat-y;
+  border-left:#252017 solid 1px;
+  border-right:#252017 solid 1px;
+*/
+  /* border-left:  #52B735 solid 1px; */
+  border: #52B735 solid 1px;
+}
+*.inline-box {
+  display: inline-block;
+  overflow: visible;
+  visibility: visible;
+  width: 200px;
+  height: 200px;
+  margin: 10px 100px;
+  padding: 10px 10px;
+  border: 5px solid #52C131;
+}
+#header {
+  background-color: #372458;
+}
+#header h1 {
+  margin:0;
+  padding:10px;
+  color:#52C131;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  text-align:  center;
+}
+#sidebar {
+  width:21%;
+  float:left;
+  padding:2%;
+  border-right: #52B735 solid 1px;
+}
+
+#mainContent {
+  margin-left:25%;
+  padding:10px 20px;
+  /* border-left: #52B735 solid 1px; */
+}
+
+/* #footer {
+  background-color:#252017;
+  color:#DB9924;
+  padding:10px;
+  clear:both;
+} */
+
+#clear-test {
+  clear: both;
+}
+
+h2, h3 {
+  margin-top:0;
+}
+</style>
+
 </head>
+
 
 <body>
 
-<div id="center">
-<h1>Journey to the Edge</h1>
-<p>The <a href="http://www.nps.gov/grca/index.htm">Grand Canyon</a> in northern Arizona is one of the most stunning natural phenomena in the world. Reading about it, seeing photos, even watching documentary movies on a cinema screen do nothing to prepare you for that moment when you first step up to the edge. The North Rim of the Canyon rises a thousand feet (more than 300 meters) higher than the South Rim, and is heavily forested. After driving through lush grassland and winding forest roads, the Canyon suddenly opens up before you in all its jaw-dropping magnificence.</p>
-<blockquote>
-  <p>Leave it as it is. You cannot improve on it. 
-  The ages have been at work on it, and only man can mar it.</p>
-  <p>Theodore Roosevelt, May 6, 1903</p>
-</blockquote>
+<div id="header">
+  <%= image_tag("TruthMissionLogo.jpg", :alt => "truthmission logo", :class => "inline-box") %>
+  <!-- <img class="inline-box" src="../../../assets/images/TruthMissionLogo.jpg" alt="truthmission logo" /> -->
+  <h1>Site Heading</h1>
 </div>
-
-
-<table class="auto-layout sized">
-  <tr> <td class="half-width">
-
-<div>
-
-<h2>From biting wind to warm updraft</h2>
-<p>Because of its altitude, access to the North Rim through the <a href="http://www.fs.fed.us/r3/kai/recreation/trails/index.shtml">Kaibab National Forest</a> is cut off by heavy snow from late October to mid-May each year. Even during the summer months, a biting wind often blows across the grasslands in the forest, catching the ill-prepared visitor by surprise. Then, as you step out of your car at Point Imperial, a warm blast of air greets you, rising from the Colorado River, nearly 6,000 feet (1,800 meters) below. Daytime temperatures at the bottom of the Canyon often exceed 100&deg; F (38&deg; C), causing a warm updraft that mixes pleasantly with the cooler air of the plateau. On a clear summer's day, from Point Imperial you can see for miles across the Navajo Indian Reservation and <a href="http://www.arizona-leisure.com/painted-desert.html">Painted Desert</a> to the East.</p>
-
-<table width="300" border="0">
-  <caption>
-    Grand Canyon facts
-  </caption>
-  <tr>
-    <th scope="row">Length:</th>
-    <td>277 miles (446 km)</td>
-  </tr>
-  <tr>
-    <th scope="row">Widest point:</th>
-    <td>18 miles (29 km)</td>
-  </tr>
-  <tr>
-    <th scope="row">Depth:</th>
-    <td>1 mile (1.6 km)</td>
-  </tr>
-</table>
-
-</div> </td>
-
-
-<td class="half-width">
-
-<div>
-
-<h2>Head for heights required </h2>
-<p>Driving south across the Walhalla Plateau, you come to Cape Royal and the spectacular Angel's Window, a large natural arch that has been eroded out of a slender outcrop that protrudes into the Canyon. Walking over the arch to the viewpoint requires a strong stomach and head for heights, even though there are safety rails on both sides.</p>
-<p>The safety rails on Angel's Window are the exception, rather than the rule. Most places along the edge of the Canyon have no guard rails at all. This comes as something of a surprise in these days of safety consciousness, but after a while, you come to appreciate the fact that the National Park Service has left the Grand Canyon unspoiled as much as possible. Footpaths are clearly marked and well-made. Visitors are left responsible for their own safety.</p>
-
-</div> </td> </tr> </table>
+<div id="wrapper">
+  <div id="sidebar">
+    <h3>Sidebar heading</h3>
+    <p>The column backgrounds are created by an extra-wide background image, which is positioned horizontally using a  percentage value. The sidebar background occupies the same percentage of the background image.</p>
+  </div>
+  <div id="mainContent">
+    <h2>Main Heading</h2>
+    <p>Sed do eiusmod tempor incididunt lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor cupidatat non proident, sed do eiusmod tempor incididunt.</p>
+    <p>Ut enim ad minim veniam, lorem ipsum dolor sit amet, ut aliquip ex ea commodo consequat.  Ut labore et dolore magna aliqua.</p>
+    <p>Sed do eiusmod tempor incididunt quis nostrud exercitation excepteur sint occaecat. Velit esse cillum dolore qui officia deserunt ut enim ad minim veniam.  Ullamco laboris nisi ut aliquip. </p>
+  </div>
+  <!-- <div id="footer">Footer content</div> -->
+</div>
+<div id="hmm">This is the bottom of the wrapper!!</div>
 
 </body>
+
 </html>
