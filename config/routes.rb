@@ -1,9 +1,13 @@
 FreedomApp::Application.routes.draw do
-  get "static_pages/home"
+  
+  root to: 'static_pages#welcome'
 
-  get "static_pages/help"
+  match '/welcome',  to: 'static_pages#welcome'
 
-  get "static_pages/about"
+  match '/whoiam', to: 'static_pages#whoiam'
+
+  match '/sleeping', to: 'static_pages#sleeping'
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
