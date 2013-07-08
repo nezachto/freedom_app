@@ -8,6 +8,8 @@ FreedomApp::Application.routes.draw do
 
   match '/sleeping', to: 'static_pages#sleeping'
 
+  match '/interview', to: 'static_pages#interview'
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
