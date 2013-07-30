@@ -10,6 +10,8 @@ FreedomApp::Application.routes.draw do
 
   match '/interview', to: 'static_pages#interview'
 
+  match '/babylon', to: 'static_pages#babylon'
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
