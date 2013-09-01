@@ -8,46 +8,126 @@
 <style type="text/css">
 
 body {
-  background-color:#372458;
-  color:#52B735;
+
+  background-image: url(<%= image_path "babylonbg2.jpg" %>);
+
+  /* The next parameter depends on CSS3 support: IE9+ etc. */
+  background-size: 100%;
+
+  background-position: 0 0;
+
+  /* Tiling vertically with this image makes sense but NOT horizontally */
+  /* background-repeat: repeat-y; */
+
+  /* background-color:#372458;  This formerly was deep purple */
+  color:#52B799;
+
   font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
   margin:0;
+
 }
-#wrapper {
-  position: relative;
 
-  margin: 0 10%;
+/* Not sure why this is necessary but everyone says do it so .. */
+html, body  { height: 100%; }
 
-  height: 500px;
-
-  /* background-color: #523478; */
-  /* background-image: url('/assets/images/sidebar_liquid.jpg'); */
-
-  background-image: url(<%= image_path "Liquid_Rule.jpg" %>);
-
-  /* background-image: url("./Liquid_Rule.jpg"); */
-  background-position: 25% 0;
-  background-repeat: repeat-y;
-
-  border-left:  #52B735 solid 1px;
-  border-right: #52B735 solid 1px;
-  border-top:   #52B735 solid 1px;
-  border-bottom:  #52B735 solid 1px;
-}
 
 *.inline-box {
   display: inline-block;
   overflow: visible;
   visibility: visible;
-  width: 350px;
-  height: 350px;
-  margin: 10px 100px;
+
+  /* Major shrinkage in size for the logo! */
+  width: 150px;
+  height: 75px;
+  /* width: 350px;  height: 350px; */
+
+  margin: 50px auto 0 18%;   /* Set left margin at 18% to move logo past picture of whore */
+                                 /* Give generous bottom margin to move box down some */
+  /* margin: 10px 100px; */
+
   padding: 10px 10px;
   /* border: 5px solid #52C131; */
 }
 
+
+/* #stretchtobottom {
+  position: relative;
+  min-height: 100%;      Critical, otherwise this becomes an empty shell div! 
+} */
+
+
+
+
+
+#wrapper {     /* The wrapper seems OK ... */
+
+  position: relative;
+
+  /* position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0; */
+
+
+  /* Ah so here's the magic for the main wrapper. The left and right margins are percentages of the body
+     to fit in the graphics. The absolute positioning allows "auto" for the vertical margins since
+     this wrapper is sized to a height of 600px. Thus, the wrapper is centered vertically with respect
+     to the overall window! */
+  /* margin: auto 21%; */
+
+  margin: 0 21%;   /* Fit in the left and right-side graphics */
+
+  margin-top: 110px;     /* This took some experimentation but it seems to be good */
+  /* margin: 0 10%; */
+
+  height: 600px;  /* height: 500px */;
+
+  /* background-color: #523478; */
+  /* background-image: url('/assets/images/sidebar_liquid.jpg'); */
+
+  /* background-image: url(<%= image_path "Liquid_Rule.jpg" %>); */
+
+  /* background-image: url("./Liquid_Rule.jpg"); */
+  /* background-position: 25% 0;
+  background-repeat: repeat-y; */
+
+  /* border-left:  #52B735 solid 1px;
+  border-right: #52B735 solid 1px;
+  border-top:   #52B735 solid 1px;
+  border-bottom:  #52B735 solid 1px; */
+}
+
+
+
+#sidebar {
+  width: 21%;
+  float: left;
+  padding: 2%;
+  /* border-right: #52B735 solid 1px; */
+}
+
+
+
+#mainContent {
+  left: 0; position: absolute;
+
+  margin-left:25%;
+
+  padding:10px 20px;
+
+  height: 580px;   /* Because wrapper is 600px and padding for top and bottom both 10px */
+  /* height: 480px; */
+
+  overflow: auto;
+
+  background-color: #372559;
+
+  /* border: #52B735 solid 1px; */   /* Whoa, remove the border! */
+}
+
+
+
+
 #header {
-  background-color: #372458;
+  /* background-color: #372458; */
 }
 #header h1 {
   margin:0;
@@ -57,22 +137,6 @@ body {
   text-align:  center;
 }
 
-#sidebar {
-  width:21%;
-  float:left;
-  padding:2%;
-  /* border-right: #52B735 solid 1px; */
-}
-
-
-#mainContent {
-  left: 0; position: absolute;
-  margin-left:25%;
-  padding:10px 20px;
-  height: 480px;
-  overflow: auto;
-  /* border-left: #52B735 solid 1px; */
-}
 
 /* *.selected { left: 0; width: auto; } */
 
@@ -85,12 +149,21 @@ body {
   /* border-bottom:  #52B735 solid 1px; */
 }
 
-*.spacer-large  { padding-bottom:501px; }
+
+
+*.spacer-large  { padding-bottom:10px;}    /* Change bottom buffer zone */
+/* *.spacer-large  { padding-bottom:501px; } */
+
 
 
 h2, h3 {
   margin-top:0;
 }
+
+#mainContent h4 {
+  color: #52B799;    /* Turn it blue instead of bright green */
+}
+
 
 
 #sidebar h3, #sidebar h2 {
@@ -103,16 +176,23 @@ h2, h3 {
 
 
 
+
 ul.tabs  { list-style-type: none; margin: 0; padding: 0;}
 
 ul.tabs li  { margin: 0; }
 
 
-ul.tabs *.tab-label a  { display:block; text-decoration:none; color:#52C131;
-                         padding: 10px 0 10px 4px; font-size: 30px;}
+/* ul.tabs *.tab-label a  { display:block; text-decoration:none; color:#52C131;
+                         padding: 10px 0 10px 4px; font-size: 30px;} */
+
+
+ul.tabs *.tab-label a  { display:block; text-decoration:none; color:#372559;
+                         padding: 10px 0 10px 4px; font-size: 30px;} 
                          
 
-ul.tabs *.tab-label a:hover  { color:#72A184; background-color:#8527A1 }
+/* ul.tabs *.tab-label a:hover  { color:#72A184; background-color:#8527A1 } */
+
+ul.tabs *.tab-label a:hover  { color:#72A184; background-color:#372559 }
 
 
 
@@ -125,12 +205,18 @@ ul.tabs *.tab-label a:hover  { color:#72A184; background-color:#8527A1 }
 <body>
 
 <div id="header">
-  <%= image_tag("TruthMissionLogoCamelCase.jpg", :alt => "truthmission logo", :class => "inline-box") %>
+  <%= image_tag("TruthMissionLogoCropped.jpg", :alt => "truthmission logo", :class => "inline-box") %>
+  <!-- <%= image_tag("TruthMissionLogoCamelCase.jpg", :alt => "truthmission logo", :class => "inline-box") %>  ->
   <!-- <img class="inline-box" src="TruthMissionLogoCamelCase.jpg" alt="truthmission logo"> -->
   <!-- <h1>Site Heading</h1> -->
 </div>
 
+
+
+
+
 <div id="wrapper">
+
 
   <div id="sidebar">
 
@@ -141,42 +227,81 @@ ul.tabs *.tab-label a:hover  { color:#72A184; background-color:#8527A1 }
       <li><h3 class="tab-label"><a href="interview.html">Interview</a></h3></li>
       <li><h3 class="tab-label"><a href="babylon.html">Babylon</a></h3></li>
       <li><h3 class="tab-label"><a href="church.html">Church</a></h3></li>
-    </ul>
+    </ul>  -->
     
     <!-- <h3>Sidebar heading</h3>
     <p>The column backgrounds are created by an extra-wide background image, which is positioned horizontally using a  percentage value. The sidebar background occupies the same percentage of the background image.</p>  -->
 
-  </div>
+  </div>  
+
   
   <div id="mainContent" class="selected">
 
-    <h4><b><i>So why is the Body of Christ suffering?</i></b></h4> <br />
+    <p>Babylon is real.</p>
 
-    <p>Many people assume the Body of Christ is doing well. Actually, many of them would even think that the Body of Christ is prospering. But the sad reality is that there are many believers in Christ who have given up hope when it comes to making their lives count for God. That this is so should not be surprising when one considers what is about to be explained now.</p>
+    <p>There are many people today who follow Jesus who instinctively know that something is awry when it comes to the Body of Christ, that is, the collection of people who have been born again by trusting in Jesus to cleanse them from their sins. Now, as to why they feel this way, they can't quite put their finger on it. Perhaps, it has something to do with their emotions. Or perhaps, it relates to their inability to find out what it is that God wants them to do with their lives. Whatever the case may be, one thing is certain: Something is definitely wrong.</p>
 
-    <p>The Body of Christ is suffering to a huge degree. There are many people who call themselves believers who have given up hope in the sense that they no longer believe that God is real. They may believe that He is going to meet them at the end of their lives, but when it comes to this life, they are going through the motions by going to church or saying rote prayers at the dinner table and before going to bed. But when it comes to the reality of God, they have little desire of meeting Him in spirit and truth due to continuous letdowns, discouragements, and overall apathy. But what they need to realize is that the Body of Christ is in bondage to a spiritual principality called Babylon.</p>
+    <p>There are also many believers who cling to the notion that as long as they do their best day by day, everything is going to work out somehow. Perhaps, it can be called optimism. Or perhaps, it might be called hope of some sort. One thing is for sure: People are afraid of the truth when it comes to spiritual matters if it turns out being unpleasant. As to why this might be, it might be that they have been brought up to believe in the best of things regardless of circumstances.</p>
 
-    <p>Babylon is not very well-understood. Yes, people have some knowledge of Babylon in an historical sense from the Bible. They understand that Babylon sacked Judah in the Old Testament when God judged the people of Judah for their idolatry and other sins. And they understand that the people of God were liberated from Babylon after approximately seventy years in exile. What they don't often grasp, though, is that not only was this tremendous happening related in order to understand what happened to Israel at the end of their history, but it also describes what is happening with the Body of Christ right now.</p>
+    <p>Why do we mention these scenarios? It's because people are conditioned to react to the things of God in a certain way. They may not realize it, but they are proceeding along a path that will lead to unhappy endings. But why?</p>
 
-    <p>Israel is a type of the Body of Christ. Whatever has happened with this nation has or will also happen with the Body of Christ. There is an intimate connection between the two. Unfortunately, fallacious teachings have proliferated that try to sway one into thinking that Israel was punished in such a way that it will never ever happen again. Not true.</p>
+    <p>The Body of Christ is currently being held hostage by a spiritual kingdom known as Babylon. Many people are not aware that Babylon exists! They think that Babylon solely refers to the kingdom that sacked Judah in the Old Testament. They fail to realize that Babylon is mentioned countless times in the Bible and in such a way that it cannot possibly refer to the aforementioned kingdom.</p>
 
-    <p>Babylon exists. It is a spiritual kingdom. It is a kingdom that seeks to eliminate the people of God by distorting their perspective of what God requires of them. Actually, it is a realm that is so powerful that the only way one can possibly seek to survive is to lean upon God entirely. Without God's direct intervention in a believer's life, Babylon is much too powerful for any believer to overcome on their own. We are so limited as people. God is unlimited. But without His hand in our lives, we have absolutely no chance of surviving spiritually.</p>
+    <p>So then, what is Babylon like? We can find some clues from various Biblical passages, of which one would be Isaiah 14: 7-8</p>
 
     <blockquote>
-      <i>"I will winnow them with a winnowing fork at the gates of the land.<br />I will bereave them of children, I will destroy My people;<br />They did not repent of their ways."</i>
+      <i>"The whole earth is at rest and is quiet;<br />
+      They break forth into shouts of joy.<br />
+      Even the cypress trees rejoice over you, and the cedars of Lebanon, saying,<br />
+      'Since you were laid low, no tree cutter comes up against us.'"<br /></i>
     </blockquote>
 
-    <p>This is found in Jeremiah 15:7. Now, at the time, it spoke of what the Lord was going to do Judah via Babylon because of their many sins. And indeed it came to pass in a graphic and literal sense. Yet, it also speaks of what the Body of Christ has gone through. Not physically, but even worse, spiritually. The Body of Christ, spiritually speaking, is decimated. Babylon has torn us apart in every which way. Sure, some of the Body of Christ may be holding out somehow, but the true condition of the Body of Christ is no better than what Judah was like at the end of their history. Yet, some people have been deceived into thinking that the Body of Christ is doing well. Churches often try to do their best to put a happy face on what is a disastrous situation. Christian believers are going through the motions, by and large. They don't know what God's will for their lives is, and they are on a course that will earn them the worst of penalties when the time of reckoning is upon them.</p>
+    <p>The context of this passage is evident from the preceding verses that make it clear that the king of Babylon is being addressed. In addition, there is widespread celebration over his downfall. And on top of this, it appears that the events in this chapter have not taken place yet.</p>
 
-    <p>Therefore, Babylon has done its damage. We need to understand that. And then it becomes clear how significant the impending liberation of God's people from Babylon really is!</p>
+    <p>So what is the significance of this? It is telling us that whoever this king of Babylon is, he is afflicting the entire earth. This is not just some kingdom from the past that conquered Judah. This is language that points to something much bigger!</p>
+
+    <p>With this in mind, we can survey countless other passages that afford us further valuable insights! Let's look at Jeremiah 50: 24-26</p>
+
+    <blockquote>
+      <i>"I set a snare for you and you were also caught, O Babylon,<br />
+        While you yourself were not aware;<br />
+        You have been found and also seized<br />
+        Because you have engaged in conflict with the LORD."<br />
+        The LORD has opened His armory<br />
+        And has brought forth the weapons of His indignation,<br />
+        For it is a work of the Lord GOD of hosts<br />
+        In the land of the Chaldeans.<br />
+        Come to her from the farthest border;<br />
+        Open up her barns,<br />
+        Pile her up like heaps<br />
+        And utterly destroy her,<br />
+        Let nothing be left to her.<br /></i>
+    </blockquote>
+
+    <p>Although this passage points to details that appear to refer to pure military conflict, there are indications that something more is in play. For one thing, why would Jeremiah use this language to refer to solely the historical kingdom of Babylon if the kingdom of Judah was about to fall? It doesn't make sense. Why? It's because at the time Jeremiah was prophesying, Judah was the kingdom that deserved condemnation for turning away from the Lord. If anyone deserved to be denounced, it was them. But isn't it possible, then, that Jeremiah was looking forward to the time when Babylon would receive its just reward for pillaging the people of God in terms of an eye for an eye? This cannot be when one realizes that Babylon was not capable of receiving this type of judgment in the manner this passage describes! Look at the phrase, "Come to her from the farthest border," for example. How could this apply to the historical kingdom of Babylon? Nations around the earth would not have had the technological means to gang up on Babylon in the manner this phrase describes. This is referring to a judgment of a spiritual entity, not a physical one.</p>
+
+    <p>There are many other passages that we could look at, but it is not the goal of this article to conclusively establish everything about the spiritual kingdom of Babylon. Instead, the more important thing to assess is the means by which this kingdom has damaged the Body of Christ. Indeed, this itself is a lengthy topic. But we can point to several key considerations.</p>
+
+    <p>Babylon is the kingdom that served as the environment in which Daniel was brought up as a young prophet. Although Daniel is a book that is immensely complex, there are a few key pieces of information that we can glean.</p>
+
+    <p>For starters, Daniel's three friends were commanded to bow down to worship a manmade idol by no less than the king himself! In other words, the king of Babylon wanted them to commit spiritual fornication. The Bible makes amply clear that to idolize anyone or anything other than God himself is spiritual fornication. And although Daniel's friends resisted this command, one can only imagine how tempting it might have been to sidestep the threats made by the king to have them thrown into a blazing furnace by simply bowing down before this image Nebuchadnezzar had set up. From this, we learn something about the spiritual realm of Babylon: Babylon is ruthless, tough, and desires us to commit spiritual fornication by renouncing God and serving him instead. In other words, Babylon tries everything in its power to cause us to turn away from God.</p>
+
+    <p>There's more! Babylon also was a place where false prophets abounded. As evidence of this, we can refer to the second chapter. Here, we read an account in which numerous fortunetellers and soothsayers were called upon by the king to interpret a disturbing dream he had received the night before. It is clear from this tale that the king relied very heavily on having these men around him. As to why, we can reasonably guess that the king was not only ruthless, but he was someone who placed great emphasis upon divination and the occult. In other words, he relied upon the powers of spiritual darkness to inform him when it came to making decisions. From this, we see that the kingdom of Babylon is a realm that thrives upon spiritual powers that are not from God.</p>
+
+    <p>In addition, we find that Babylon was a kingdom that was given to much dissipation and excess. This is clear in the account concerning Belshazzar's feast in the fifth chapter. What this tells us is that this is a realm that tends to veer toward gratification of impulses, whether they be sensual or lusty. The Holy Spirit, on the other hand, is about moderation and self-control. Therefore, it is useful to see from this that Babylon thrives on the weakness of believers when it comes to gratifying their desires. To be able to exercise self-control is something that many believers have not been able to accomplish when it comes to daily living.</p>
+
+    <p>Let's also observe that Babylon was a kingdom that took particular pleasure in destroying the kingdom of Judah which was the holy symbol of God's grace and favor. When one reads the Scriptural account of how Judah fell toward the end of its existence, one cannot be but impressed at how quickly and decisively the Babylonians moved to build siege ramps upon the city of Jerusalem and then infiltrated the city once they had been suitably weakened to the point of helplessness. There is a parallel with how the kingdom of Babylon has weakened the Body of Christ! By cutting off supply to spiritual food and nourishment for the people of God, Babylon has dominated the Body of Christ to the point in which God's people are so weak they can barely feed themselves spiritually. There is a shocking parallel.</p>
+
+    <p>As to how Babylon has achieved its objectives in decimating the people of God, that is a separate topic that would require its own explanation. For now, it is sufficient to recognize that the people of God desperately need to be liberated. There is so much at stake, and that is what this ministry seeks to address.</p>
 
     <br />
 
   </div>
 
-</div>
 
-<div class="spacer-large"></div>
+</div> 
+
+
 
 </body>
 
