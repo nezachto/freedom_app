@@ -34,4 +34,7 @@ FreedomApp::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+  # Disable compile of assets, do everything explicitly
+  config.assets.compile = true
 end
