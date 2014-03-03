@@ -67,5 +67,9 @@ module FreedomApp
 
     # add app/assets/fonts to the asset path
     config.assets.paths << Rails.root.join("app", "assets", "fonts")
+
+    # Heroku issue with precompile!
+    config.assets.initialize_on_precompile = false
+    
   end
 end
