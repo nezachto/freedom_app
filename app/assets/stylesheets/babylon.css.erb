@@ -1,0 +1,193 @@
+
+
+body {
+
+  /* There is real magic going on here, note the 'asset_path'! 
+    This will dig up the image file, whether in public/assets/ or app/assets/images/ */
+  background-image: url(<%= asset_path 'babylonbg2.jpg' %>);
+
+  /* The next parameter depends on CSS3 support: IE9+ etc. */
+  background-size: 100%;
+
+  background-position: 0 0;
+
+  /* Tiling vertically with this image makes sense but NOT horizontally */
+  /* background-repeat: repeat-y; */
+
+  /* background-color:#372458; */  /* This formerly was deep purple */
+  color:#52B799;
+
+  /* font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; */
+  margin:0;
+
+}
+
+/* Not sure why this is necessary but everyone says do it so .. */
+html, body  { height: 100%; }
+
+
+*.inline-box {
+  display: inline-block;
+  overflow: visible;
+  visibility: visible;
+
+  /* Major shrinkage in size for the logo! */
+  width: 150px;
+  height: 75px;
+  /* width: 350px;  height: 350px; */
+
+  margin: 50px auto 0 18%;   /* Set left margin at 18% to move logo past picture of whore */
+                                 /* Give generous bottom margin to move box down some */
+  /* margin: 10px 100px; */
+
+  padding: 10px 10px;
+  /* border: 5px solid #52C131; */
+}
+
+
+/* #stretchtobottom {
+  position: relative;
+  min-height: 100%;      Critical, otherwise this becomes an empty shell div! 
+} */
+
+
+
+
+
+#wrapper {     /* The wrapper seems OK ... */
+
+  position: relative;
+
+  /* position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0; */
+
+
+  /* Ah so here's the magic for the main wrapper. The left and right margins are percentages of the body
+     to fit in the graphics. The absolute positioning allows "auto" for the vertical margins since
+     this wrapper is sized to a height of 600px. Thus, the wrapper is centered vertically with respect
+     to the overall window! */
+  /* margin: auto 21%; */
+
+  margin: 0 21%;   /* Fit in the left and right-side graphics */
+
+  margin-top: 110px;     /* This took some experimentation but it seems to be good */
+  /* margin: 0 10%; */
+
+  height: 600px;  /* height: 500px */;
+
+  /* background-color: #523478; */
+  /* background-image: url('/assets/images/sidebar_liquid.jpg'); */
+
+  /* background-image: url(<%= image_path "Liquid_Rule.jpg" %>); */
+
+  /* background-image: url("./Liquid_Rule.jpg"); */
+  /* background-position: 25% 0;
+  background-repeat: repeat-y; */
+
+  /* border-left:  #52B735 solid 1px;
+  border-right: #52B735 solid 1px;
+  border-top:   #52B735 solid 1px;
+  border-bottom:  #52B735 solid 1px; */
+}
+
+
+
+#sidebar {
+  width: 21%;
+  float: left;
+  padding: 2%;
+  /* border-right: #52B735 solid 1px; */
+}
+
+
+
+#mainContent {
+  left: 0; position: absolute;
+
+  margin-left:25%;
+
+  padding:10px 20px;
+
+  height: 580px;   /* Because wrapper is 600px and padding for top and bottom both 10px */
+  /* height: 480px; */
+
+  overflow: auto;
+
+  background-color: #372559;
+
+  /* border: #52B735 solid 1px; */   /* Whoa, remove the border! */
+}
+
+
+
+
+#header {
+  /* background-color: #372458; */
+}
+#header h1 {
+  margin:0;
+  padding:10px;
+  color:#52C131;
+  /* font-family: Georgia, "Times New Roman", Times, serif; */
+  text-align:  center;
+}
+
+
+/* *.selected { left: 0; width: auto; } */
+
+
+#footer {
+  /* background-color:#523478; */
+  /* color:#DB9924; */
+  /* padding:10px; */
+  clear:both;
+  /* border-bottom:  #52B735 solid 1px; */
+}
+
+
+
+/* *.spacer-large  { padding-bottom:10px;}   */  /* Change bottom buffer zone */
+*.spacer-large  { padding-bottom:301px; }
+
+
+
+h2, h3 {
+  margin-top:0;
+}
+
+#mainContent h4 {
+  color: #52B799;    /* Turn it blue instead of bright green */
+}
+
+
+
+#sidebar h3, #sidebar h2, #sidebar h4 {
+  margin: 0;
+  padding:0;
+  /* color:#52C131; */
+  /* font-family: Georgia, "Times New Roman", Times, serif; */
+  /* text-align:  center; */
+}
+
+
+
+
+
+ul.tabs  { list-style-type: none; margin: 0; padding: 0;}
+
+ul.tabs li  { margin: 0; }
+
+
+/* ul.tabs *.tab-label a  { display:block; text-decoration:none; color:#52C131;
+                         padding: 10px 0 10px 4px; font-size: 30px;} */
+
+
+ul.tabs *.tab-label a  { display:block; text-decoration:none; color:#372559;
+                         padding: 10px 0 10px 4px; font-size: 25px;} 
+                         
+
+/* ul.tabs *.tab-label a:hover  { color:#72A184; background-color:#8527A1 } */
+
+ul.tabs *.tab-label a:hover  { color:#72A184; background-color:#372559 }
+
+
