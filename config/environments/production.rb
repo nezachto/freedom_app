@@ -17,6 +17,10 @@ FreedomApp::Application.configure do
   # Don't fallback to assets pipeline if a precompiled asset is missed
   config.assets.compile = false
 
+  # Let's not only precompile the funky stuff but also the CSS and JS
+  # The bundle exec rake:precompile does the fonts but not the stylesheets
+  config.assets.precompile += %w( *.css *.js )
+
   # Generate digests for assets URLs
   config.assets.digest = true
 
